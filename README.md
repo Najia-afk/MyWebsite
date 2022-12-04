@@ -32,8 +32,8 @@ To set up your Flask app on a Unix server and enable HTTPS for secure communicat
 
 8. Configure your Flask app to use the SSL/TLS certificate and key. For example:
 
-```app = Flask(name)
-app.run(ssl_context=('myserver.crt', 'myserver.key'))```
+```app = Flask(name)```
+```app.run(ssl_context=('myserver.crt', 'myserver.key'))```
 
 
 9. Restart your Flask app and access it using the `https` protocol. For example:
