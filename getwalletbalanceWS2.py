@@ -2,6 +2,7 @@
 from flask import Flask, request, jsonify
 import json
 import json  as json_data
+import os
 
 # Import the requests and web3 libraries
 import requests
@@ -9,6 +10,13 @@ import web3
 
 # Import the re module for regular expressions
 import re
+
+# Read the API key from the apikey.txt file
+with open("apikey.txt", "r") as f:
+     your_api_key = f.read()
+     
+# Set the API key as an environment variable in your Flask app
+os.environ['API_KEY'] = your_api_key
 
 # Create a Flask app instance
 app = Flask(__name__)
@@ -30,8 +38,7 @@ app.after_request(add_header)
 @app.route('/getlastmaticprice', methods=['GET'])
 def getlastmaticprice():
     # Read the API key from the apikey.txt file
-    with open("apikey.txt", "r") as f:
-        apikey = f.read()
+    api_key = os.getenv('API_KEY')
     if not apikey:
         return jsonify({"error": "API key not found"})
 
@@ -72,8 +79,7 @@ def getwalletbalance():
         return jsonify({"error": "Invalid wallet address"})
 
     # Read the API key from the apikey.txt file
-    with open("apikey.txt", "r") as f:
-        apikey = f.read()
+    api_key = os.getenv('API_KEY')
     if not apikey:
         return jsonify({"error": "API key not found"})
 
@@ -138,3 +144,4 @@ def getwalletbalance():
 # Start the Flask app
 if __name__ == "__main__":
     app.run()
+    
