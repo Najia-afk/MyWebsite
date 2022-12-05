@@ -9,8 +9,13 @@
     <form id="form" action="http://localhost:5000/getwalletbalance" method="get">
       <label for="wallet_address">Enter the address of your wallet:</label><br>
       <input type="text" id="wallet_address" name="wallet_address"><br>
-      <input type="submit" value="Check Balance">
+      <input type="submit" value="Check Balance" onclick="getBalance()">
     </form>
     <div id="balance"></div>
+	<!-- Add a new div to show the result of the multiplication -->
+	<div id="multiplication-result" style="position: absolute; top: 0; right: 0;"></div>
+	<!-- Add a new div to show the MATIC price -->
+	<div id="matic-price" style="position: absolute; top: 0; right: 0;"></div>
+    <script src="js/getmaticprice.js"></script>
   </body>
 </html>

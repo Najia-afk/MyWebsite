@@ -25,7 +25,7 @@ window.addEventListener("load", function() {
           document.getElementById("balance").innerHTML = response.error;
         } else {
           // Show the balance in Ether
-          document.getElementById("balance").textContent = response.balance + " ETH";
+          document.getElementById("balance").textContent = "Balance: " + response.balance + " Matic";
         }
       } else {
         // Show an error message
@@ -37,3 +37,29 @@ window.addEventListener("load", function() {
   // Log a message to the console
   console.log("The page has finished loading");
 });
+
+
+function getBalance() {
+    // Get the wallet address from the input field
+    var wallet_address = document.getElementById("wallet_address").value;
+
+    // Make an AJAX request to the Flask app
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // Parse the JSON response
+            var response = JSON.parse(this.responseText);
+
+            // Check if the response contains an error
+            if (response.error) {
+                // Show the error message
+                document.getElementById("balance").textContent = response.error;
+            } else {
+                // Show the balance in Ether
+                document.getElementById("balance").textContent = "Balance: " + response.balance + " Matic";
+            }
+        }
+    };
+    xhttp.open("GET", "http://localhost:5000/getwalletbalance?wallet_address=" + wallet_address, true);
+    xhttp.send();
+}

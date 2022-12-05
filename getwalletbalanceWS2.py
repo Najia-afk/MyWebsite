@@ -1,6 +1,7 @@
 # Import the Flask library
 from flask import Flask, request, jsonify
 import json
+import json  as json_data
 
 # Import the requests and web3 libraries
 import requests
@@ -12,6 +13,9 @@ import re
 # Create a Flask app instance
 app = Flask(__name__)
 
+# Define a variable to store the MATIC price
+maticusd = 0.0
+
 # Define a function to add the header to the response
 def add_header(response):
     response.headers['Access-Control-Allow-Origin'] = '*'
@@ -21,6 +25,39 @@ def add_header(response):
 app.after_request(add_header)
 
 # Define a route for the Flask app to handle incoming HTTP requests
+
+
+@app.route('/getlastmaticprice', methods=['GET'])
+def getlastmaticprice():
+    # Read the API key from the apikey.txt file
+    with open("apikey.txt", "r") as f:
+        apikey = f.read()
+    if not apikey:
+        return jsonify({"error": "API key not found"})
+
+    # Set the API URL for the PolygonScan API
+    api_url = "https://api.polygonscan.com/api?module=stats&action=maticprice&apikey=" + apikey
+
+    # Make a GET request to the API
+    response = requests.get(api_url)
+
+    # Check the status code of the response
+    if response.status_code == 200:
+        # Parse the JSON response
+        data = response.json()
+
+        # Extract the MATIC price from the result object
+        maticbtc = data["result"]["maticbtc"]
+        maticusd = data["result"]["maticusd"]
+
+
+        # Return the MATIC balance as a JSON object
+        return jsonify({"maticbtc": maticbtc, "maticusd": maticusd})
+    else:
+        # Return an error message
+        return jsonify({"error": "Error getting MATIC price: " + response.text})
+
+
 @app.route('/getwalletbalance', methods=['GET'])
 def getwalletbalance():
     # Set the base URL for the PolygonScan API
@@ -61,22 +98,39 @@ def getwalletbalance():
 
         # Convert the balance from a string to a float
         balance = float(balance)
-    
+
+        # Get the MATIC price
+        matic_balance_usd = maticusd
+
+        # Multiply the balance by the MATIC price
+        matic_balance_usd = balance * matic_balance_usd
+
+        # Round the values to two decimal places
+        matic_balance_usd = round(matic_balance_usd, 2)
+
         #Set up the web3 instance
         w3 = web3.Web3(web3.Web3.HTTPProvider("https://api.polygonscan.com/api"))
 
         # Convert the balance from Wei to Ether
         ether_balance = w3.fromWei(balance, "ether")
         
+        # Round the values to two decimal places
+        ether_balance = round(ether_balance, 2)
+
         # Replace the placeholder in the HTML page with the balance
         with open("templates/Main.html", "r") as f:
             html = f.read()
         html = html.replace("{{balance}}", str(ether_balance) + " Matic")
-        
-        # Return the modified HTML page
-        # return html
-        # Return the balance in Ether as a JSON object
-        return jsonify({"balance": ether_balance})
+
+        # Set up the result object
+        result = {
+            "wallet_address": wallet_address,
+            "balance": balance,
+            "matic_balance_usd": matic_balance_usd
+        }
+
+        # Return the balance in Matic as a JSON object
+        return jsonify(result)
     else:
         # Return an error message
         return jsonify({"error": "Error retrieving balance: " + response.text})
