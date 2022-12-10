@@ -1,7 +1,7 @@
 // Function to get the latest price of MATIC
 function getMaticPrice() {
   // Fetch the latest price of MATIC from the API
-  fetch("http://www.adventurecrypto.xyz/getlastmaticprice")
+  fetch("http://www.adventurecrypto.xyz:8000/getlastmaticprice")
     .then(function(response) {
       return response.json();
     })
