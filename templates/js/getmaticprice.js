@@ -1,7 +1,7 @@
 // Function to get the latest price of MATIC
 function getMaticPrice() {
   // Fetch the latest price of MATIC from the API
-  fetch("http://localhost:5000/getlastmaticprice")
+  fetch("http://54.77.21.112:5000/getlastmaticprice")
     .then(function(response) {
       return response.json();
     })
