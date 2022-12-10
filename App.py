@@ -1,7 +1,6 @@
 # Import the Flask library
 from flask import Flask, request, jsonify
 import json
-import json  as json_data
 import os
 
 
