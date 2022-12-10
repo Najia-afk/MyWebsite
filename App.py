@@ -48,9 +48,15 @@ def getlastmaticprice():
 
     # Set the API URL for the PolygonScan API
     api_url = "https://api.polygonscan.com/api?module=stats&action=maticprice&apikey=" + api_key
+     
+    # Print the API URL
+     print(api_url)
 
     # Make a GET request to the API
     response = requests.get(api_url)
+     
+    # Print the response
+     print(response)
 
     # Check the status code of the response
     if response.status_code == 200:
