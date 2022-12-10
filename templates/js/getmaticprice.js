@@ -10,12 +10,13 @@ function getMaticPrice() {
       } else {
         // Show an error message if the response is not JSON
         console.log("Error: Response is not JSON");
+        console.log("Response data:", response.text); // Add this line to log the response data
         return; // Add a return statement here
       }
     })
     .then(function(data) {
       // Check if the response contains an error
-      if (data.error === undefined) {
+      if (data === undefined || data.error === undefined) { // Add a check for undefined data
         // Get the MATIC price from the response
         var maticbtc = data.maticbtc;
         var maticusd = data.maticusd;
@@ -31,3 +32,4 @@ function getMaticPrice() {
 
 // Call the getMaticPrice function every 5 seconds
 setInterval(getMaticPrice, 5000);
+
