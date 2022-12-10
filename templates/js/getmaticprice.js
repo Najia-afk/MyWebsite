@@ -10,6 +10,7 @@ function getMaticPrice() {
       } else {
         // Show an error message if the response is not JSON
         console.log("Error: Response is not JSON");
+        return; // Add a return statement here
       }
     })
     .then(function(data) {
