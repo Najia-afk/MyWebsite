@@ -16,7 +16,7 @@ function getMaticPrice() {
     })
     .then(function(data) {
       // Check if the response contains an error
-      if (data === undefined || data.error === undefined) { // Add a check for undefined data
+      if (data.error === undefined) { // Add a check for undefined data
         // Get the MATIC price from the response
         var maticbtc = data.maticbtc;
         var maticusd = data.maticusd;
