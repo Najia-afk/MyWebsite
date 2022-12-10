@@ -18,7 +18,6 @@ with open("apikey.txt", "r") as f:
      
 # Set the API key as an environment variable in your Flask app
 os.environ['API_KEY'] = your_api_key
-echo $API_KEY
 
 # Create a Flask app instance
 app = Flask(__name__)
@@ -41,11 +40,11 @@ app.after_request(add_header)
 def getlastmaticprice():
     # Read the API key from the apikey.txt file
     api_key = os.getenv('API_KEY')
-    if not apikey:
+    if not api_key:
         return jsonify({"error": "API key not found"})
 
     # Set the API URL for the PolygonScan API
-    api_url = "https://api.polygonscan.com/api?module=stats&action=maticprice&apikey=" + apikey
+    api_url = "https://api.polygonscan.com/api?module=stats&action=maticprice&apikey=" + api_key
 
     # Make a GET request to the API
     response = requests.get(api_url)
@@ -82,7 +81,7 @@ def getwalletbalance():
 
     # Read the API key from the apikey.txt file
     api_key = os.getenv('API_KEY')
-    if not apikey:
+    if not api_key:
         return jsonify({"error": "API key not found"})
 
     # Set the query parameters for the API request
@@ -90,7 +89,7 @@ def getwalletbalance():
         "module": "account",
         "action": "balance",
         "address": wallet_address,
-        "apikey": apikey
+        "apikey": api_key
     }
 
     # Make a GET request to the API
