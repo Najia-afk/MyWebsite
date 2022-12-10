@@ -3,7 +3,14 @@ function getMaticPrice() {
   // Fetch the latest price of MATIC from the API
   fetch("http://www.adventurecrypto.xyz/getlastmaticprice")
     .then(function(response) {
-      return response.json();
+      // Check the Content-Type of the response
+      if (response.headers.get("Content-Type") === "application/json") {
+        // Parse the response as JSON
+        return response.json();
+      } else {
+        // Show an error message if the response is not JSON
+        console.log("Error: Response is not JSON");
+      }
     })
     .then(function(data) {
       // Check if the response contains an error
