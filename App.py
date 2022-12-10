@@ -13,7 +13,7 @@ import web3
 import re
 
 # Read the API key from the apikey.txt file
-with open("apikey.txt", "r") as f:
+with open("MyWebsite/apikey.txt", "r") as f:
      your_api_key = f.read()
      
 # Set the API key as an environment variable in your Flask app
