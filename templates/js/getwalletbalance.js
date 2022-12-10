@@ -10,7 +10,7 @@ window.addEventListener("load", function() {
 
     // Send a GET request to the Flask app
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://54.77.21.112:5000/getwalletbalance?wallet_address=" + walletAddress);
+    xhr.open("GET", "http://www.adventurecrypto.xyz/getwalletbalance?wallet_address=" + walletAddress);
     xhr.send();
 
     // Handle the response from the Flask app
@@ -60,6 +60,6 @@ function getBalance() {
             }
         }
     };
-    xhttp.open("GET", "http://54.77.21.112:5000/getwalletbalance?wallet_address=" + wallet_address, true);
+    xhttp.open("GET", "http://www.adventurecrypto.xyz/getwalletbalance?wallet_address=" + wallet_address, true);
     xhttp.send();
 }
