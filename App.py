@@ -19,6 +19,9 @@ with open("apikey.txt", "r") as f:
 # Set the API key as an environment variable in your Flask app
 os.environ['API_KEY'] = your_api_key
 
+# Print the API_KEY environment variable to the console
+print(os.getenv('API_KEY'))
+
 # Create a Flask app instance
 app = Flask(__name__)
 
