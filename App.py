@@ -30,6 +30,7 @@ print(os.getenv('API_KEY'))
 
 # Create a Flask app instance
 app = Flask(__name__)
+app.debug = True
 
 # Define a variable to store the MATIC price
 maticusd = 0.0
