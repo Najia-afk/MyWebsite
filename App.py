@@ -12,6 +12,12 @@ import web3
 # Import the re module for regular expressions
 import re
 
+# Import the logging library
+import logging
+
+# Set the log level to DEBUG
+logging.basicConfig(level=logging.DEBUG)
+
 # Read the API key from the apikey.txt file
 with open("apikey.txt", "r") as f:
      your_api_key = f.read()
