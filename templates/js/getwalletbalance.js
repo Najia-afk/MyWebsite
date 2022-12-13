@@ -10,7 +10,7 @@ window.addEventListener("load", function() {
 
     // Send a GET request to the Flask app
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://www.adventurecrypto.xyz/getwalletbalance?wallet_address=" + walletAddress);
+    xhr.open("GET", "https://www.adventurecrypto.xyz:8000/getwalletbalance?wallet_address=" + walletAddress);
     xhr.send();
 
     // Handle the response from the Flask app
