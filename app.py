@@ -88,6 +88,9 @@ def getwalletbalance():
 
     # Read the wallet address from the request object
     wallet_address = request.args.get("wallet_address")
+     
+    # Print the wallet address from the request object
+    print("wallet_address:", wallet_address)
 
     # Use a regular expression to check if the wallet address is valid
     pattern = "^0x[a-fA-F0-9]{40}$"
