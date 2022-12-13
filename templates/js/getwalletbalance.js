@@ -60,6 +60,6 @@ function getBalance() {
             }
         }
     };
-    xhttp.open("GET", "https://www.adventurecrypto.xyz/getwalletbalance?wallet_address=" + wallet_address, true);
+    xhttp.open("GET", "https://www.adventurecrypto.xyz:8000/getwalletbalance?wallet_address=" + wallet_address, true);
     xhttp.send();
 }
