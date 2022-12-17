@@ -23,15 +23,15 @@ if [ ! -d "/etc/ssl" ]; then
 fi
 
 # Check if adventurecryptoSSL.crt file exists in /var/www/html/MyWebsite/config
-if [ -f "/var/www/html/MyWebsite/config/adventurecryptoSSL.crt" ]; then
+if [ -f "/var/www/html/MyWebsite/Config/adventurecryptoSSL.crt" ]; then
   # If it exists, copy it to /etc/ssl
-  sudo cp "/var/www/html/MyWebsite/config/adventurecryptoSSL.crt" "/etc/ssl"
+  sudo cp "/var/www/html/MyWebsite/Config/adventurecryptoSSL.crt" "/etc/ssl"
 fi
 
 # Check if adventurecryptoSSL.key file exists in /var/www/html/MyWebsite/config
-if [ -f "/var/www/html/MyWebsite/config/adventurecryptoSSL.key" ]; then
+if [ -f "/var/www/html/MyWebsite/Config/adventurecryptoSSL.key" ]; then
   # If it exists, copy it to /etc/ssl
-  sudo cp "/var/www/html/MyWebsite/config/adventurecryptoSSL.key" "/etc/ssl"
+  sudo cp "/var/www/html/MyWebsite/Config/adventurecryptoSSL.key" "/etc/ssl"
 fi
 
 # Move the imported configuration files
