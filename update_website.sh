@@ -7,10 +7,16 @@ dest_dir="/etc/MyWebsite/Config"
 nginx_conf_target="/etc/nginx/nginx.conf"
 httpd_conf_target="/etc/httpd/conf/httpd.conf"
 
-# Check if the 'MyWebsite' directory already exists
+# Check if the '/etc/MyWebsite' directory already exists
 if [ -d "/etc/MyWebsite" ]; then
   # Remove the existing 'MyWebsite' directory
   sudo rm -rf /etc/MyWebsite
+fi
+
+# Check if the '/var/www/html/MyWebsite' directory already exists
+if [ -d "/var/www/html/MyWebsite" ]; then
+  # Remove the existing 'MyWebsite' directory
+  sudo rm -rf /var/www/html/MyWebsite
 fi
 
 # Clone the Git repository
