@@ -16,6 +16,24 @@ fi
 # Clone the Git repository
 git clone https://github.com/Najia-afk/MyWebsite.git /var/www/html/MyWebsite
 
+# Check if /etc/ssl directory exists
+if [ ! -d "/etc/ssl" ]; then
+  # If it doesn't exist, create it
+  sudo mkdir "/etc/ssl"
+fi
+
+# Check if adventurecryptoSSL.crt file exists in /var/www/html/MyWebsite/config
+if [ -f "/var/www/html/MyWebsite/config/adventurecryptoSSL.crt" ]; then
+  # If it exists, copy it to /etc/ssl
+  sudo cp "/var/www/html/MyWebsite/config/adventurecryptoSSL.crt" "/etc/ssl"
+fi
+
+# Check if adventurecryptoSSL.key file exists in /var/www/html/MyWebsite/config
+if [ -f "/var/www/html/MyWebsite/config/adventurecryptoSSL.key" ]; then
+  # If it exists, copy it to /etc/ssl
+  sudo cp "/var/www/html/MyWebsite/config/adventurecryptoSSL.key" "/etc/ssl"
+fi
+
 # Move the imported configuration files
 # and rename them to the original configuration file names
 sudo mv "$dest_dir/nginx.conf" "$nginx_conf_target"
