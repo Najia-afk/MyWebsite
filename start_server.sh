@@ -8,7 +8,7 @@ certfile="/etc/ssl/adventurecryptoSSL.crt"
 bind_address="0.0.0.0:8000"
 
 # Set the path to the app module
-app_path="/var/www/html/MyWebsite"
+app_path="/etc/MyWebsite"
 
 # Set the name of the app instance within the module
 app_instance="app:app"
