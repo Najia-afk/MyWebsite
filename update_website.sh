@@ -19,9 +19,9 @@ git clone https://github.com/Najia-afk/MyWebsite.git /var/www/html/MyWebsite
 # Move the imported configuration files
 # and rename them to the original configuration file names
 sudo mv "$dest_dir/nginx.conf" "$nginx_conf_target"
-sudo mv "$dest_dir/httpd.conf" "$httpd_conf_target"
+# sudo mv "$dest_dir/httpd.conf" "$httpd_conf_target"
 
 # Restart the Nginx and Apache services
 # for the changes to take effect
-# sudo systemctl restart nginx
-sudo systemctl restart httpd
+sudo systemctl restart nginx
+# sudo systemctl restart httpd
