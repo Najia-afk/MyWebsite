@@ -40,10 +40,16 @@ if [ -f "/etc/MyWebsite/Config/adventurecryptoSSL.key" ]; then
   sudo cp "/etc/MyWebsite/Config/adventurecryptoSSL.key" "/etc/ssl"
 fi
 
+# Move everything from the /etc/MyWebsite/templates directory into /var/www/html/MyWebsite/templates and create the templates directory if it doesn't already exist,
+sudo mkdir -p /var/www/html/MyWebsite/templates
+sudo mv /etc/MyWebsite/templates/* /var/www/html/MyWebsite/templates/
+sudo chmod -R 755 /var/www/html/MyWebsite/templates
+
 # Move the imported configuration files
 # and rename them to the original configuration file names
 sudo mv "$dest_dir/nginx.conf" "$nginx_conf_target"
 # sudo mv "$dest_dir/httpd.conf" "$httpd_conf_target"
+
 
 # Start the web server
 sudo bash /etc/MyWebsite/start_server.sh
