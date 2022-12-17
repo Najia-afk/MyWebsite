@@ -45,7 +45,7 @@ sudo systemctl restart nginx
 # sudo systemctl restart httpd
 
 # Start the web server for the Python application in /var/www/html/MyWebsite/app.py using the gunicorn command.
-sudo gunicorn --keyfile /etc/ssl/adventurecryptoSSL.key --certfile /etc/ssl/adventurecryptoSSL.crt --bind 0.0.0.0:8000 /var/www/html/MyWebsite/app:app -D
+sudo gunicorn --keyfile /etc/ssl/adventurecryptoSSL.key --certfile /etc/ssl/adventurecryptoSSL.crt --bind 0.0.0.0:8000 --chdir /var/www/html/MyWebsite app:app -D
 
 # Copy the update_website.sh script to the /var/www/html directory.
 sudo cp "/var/www/html/MyWebsite/update_website.sh" "/var/www/html"
