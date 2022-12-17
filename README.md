@@ -70,7 +70,4 @@
 
       ```sudo chmod +x /var/www/html/update_website.sh```
 
-12. Run the script to update your website:
-
-      ```Run```
 
