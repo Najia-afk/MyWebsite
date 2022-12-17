@@ -43,3 +43,5 @@ sudo mv "$dest_dir/nginx.conf" "$nginx_conf_target"
 # for the changes to take effect
 sudo systemctl restart nginx
 # sudo systemctl restart httpd
+
+sudo mv /var/www/html/MyWebsite/update_website.sh /var/www/html/update_website.sh
