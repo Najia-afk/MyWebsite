@@ -30,5 +30,5 @@ function getMaticPrice() {
     });
 }
 
-// Call the getMaticPrice function every 5 seconds
-setInterval(getMaticPrice, 5000);
+// Call the getMaticPrice function every 5 minutes
+setInterval(getMaticPrice, 300000);
