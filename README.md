@@ -1,51 +1,63 @@
-# To set up your Flask app and enable HTTPS, follow these steps:
+# To install a web server on an Amazon Web Services (AWS) EC2 instance and serve a website, you can follow these steps:
 
-1. Find a web hosting provider that offers Unix-based hosting and has support for Flask. Some popular providers are DigitalOcean, Vultr, and Linode.
+1. Add a firewall rule to allow incoming traffic on port 443 for HTTPS and port 8000 for gunicorn:
 
-2. Sign up for an account with your chosen web hosting provider and set up a server.
+- Log in to the AWS Management Console.
+- Navigate to the "Security Groups" page in the "EC2" dashboard.
+- Select the security group that is associated with your EC2 instance.
+- Click the "Inbound Rules" tab, then click the "Edit" button.
+- Click the "Add Rule" button and choose "HTTPS" from the "Type" dropdown menu.
+- Leave the "Source" field as "Anywhere" and click the "Save" button.
+- Repeat the above steps to add a rule for port 8000.
 
-3. Connect to your server using ssh. For example:
+2. If necessary, attach a static IP to your EC2 instance:
 
-```ssh username@server_ip_address```
+- Navigate to the "Elastic IPs" page in the "EC2" dashboard.
+- Click the "Allocate new address" button.
+- Click the "Allocate" button to create a new static IP.
+- Select the new static IP and click the "Actions" button, then choose "Associate address".
+- Select your EC2 instance from the dropdown menu and click the "Associate" button.
 
-4. Install Flask and the other dependencies for your app using the pip command. For example:
+3. Connect to your EC2 instance using SSH:
 
-```pip3 install flask requests web3```
+- Open a terminal or command prompt window.
+- Navigate to the directory where your SSH private key is stored.
+- Run the following command to connect to your EC2 instance, replacing the IP address and path to your private key with the appropriate values:
 
-5. Upload your Flask app and HTML files to the server using the scp command. For example:
+```ssh -i "MyAWSKeyPath" username@publicserver_ip_address```
 
-```scp app.py username@server_ip_address:/var/www/html/```
+4. Install the required Python packages:
 
-6. Start your Flask app by running the following command:
+- Run the following command to install Flask, requests, web3, and gunicorn:
 
-```python3 app.py```
+```sudo pip3 install flask requests web3 gunicorn```
 
-7. Generate a SSL/TLS certificate and key for your server using the openssl command. For example:
+5. Create a directory to store your website files:
 
-```openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 -subj "/C=US/ST=California/L=San Francisco/O=My Company/CN=myserver" -keyout myserver.key -out myserver.crt```
+- Run the following command to create a directory for your website files:
 
-8. Configure your Flask app to use the SSL/TLS certificate and key. For example:
+```sudo mkdir -p /var/www/html```
 
-```app = Flask(name)```
+6. Install and start the nginx web server:
 
-```app.run(ssl_context=('myserver.crt', 'myserver.key'))```
+- Run the following command to install nginx:
 
-9. Restart your Flask app and access it using the https protocol. For example:
+```sudo amazon-linux-extras install nginx1```
 
-```https://server_ip_address:5000```
+- Run the following command to start the nginx service:
 
-10. To secure your API key, follow these steps:
+```sudo systemctl start nginx```
 
-- Store your API key in a separate file, such as apikey.txt.
+- Run the following command to check the status of the nginx service:
 
-- Use secure file permissions to restrict access to the apikey.txt file. This will prevent unauthorized users from reading the API key.
+```sudo systemctl status nginx```
 
-- Use the os.environ object in your Flask app to set the API key as an environment variable. This will prevent the key from being exposed in the source code of your app.
+7. Install Git:
 
-- Use the os.getenv function to read the API key from the environment variable and use it in your app.
+- Run the following command to install Git:
 
-- Use HTTPS to encrypt the communication between your Flask app and the client. This will prevent the API key from being exposed in the network traffic.
+```sudo yum install git```
 
-Your Flask app and HTML files should be placed in the /var/www/html directory on your server. This is the default directory where web server files are stored on an Amazon Linux 2 instance. You can create this directory if it doesn't already exist, and then place your Flask app and HTML files there.
+8. Create a script to update your website:
 
-The apikey.txt file should be stored in a secure location on your server. It is recommended to store it outside of the /var/www/html directory, as this directory is accessible to the web server and anyone who has access to the web server files. You can create a separate directory for your sensitive files, such as /var/secrets, and store the apikey.txt file there. Then, use the os.environ object to set the path to the apikey.txt file as an environment variable, and use the os.getenv function to read the API key from the environment variable in your Flask app.
+
