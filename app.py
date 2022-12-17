@@ -143,7 +143,7 @@ def getwalletbalance():
         ether_balance = round(ether_balance, 2)
 
         # Replace the placeholder in the HTML page with the balance
-        with open("templates/Main.html", "r") as f:
+        with open("/var/www/html/MyWebsite/templates/Main.html", "r") as f:
             html = f.read()
         html = html.replace("{{balance}}", str(ether_balance) + " Matic")
 
