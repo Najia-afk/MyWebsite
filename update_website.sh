@@ -40,4 +40,4 @@ sudo mv "$dest_dir/nginx.conf" "$nginx_conf_target"
 # sudo mv "$dest_dir/httpd.conf" "$httpd_conf_target"
 
 # Start the web server
-sudo bash /var/www/html/MyWebsite/start_server.sh
+bash /var/www/html/MyWebsite/start_server.sh
