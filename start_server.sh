@@ -8,7 +8,7 @@ certfile="/etc/ssl/adventurecryptoSSL.crt"
 bind_address="0.0.0.0:8000"
 
 # Set the path to the app module
-app_path="/var/www/html/MyWebsite/app"
+app_path="/var/www/html/MyWebsite"
 
 # Set the name of the app instance within the module
 app_instance="app:app"
@@ -17,7 +17,7 @@ app_instance="app:app"
 sudo systemctl restart nginx
 
 # Start the web server using gunicorn
-gunicorn --keyfile "$keyfile" --certfile "$certfile" --bind "$bind_address" "$app_path" "$app_instance" -D
+gunicorn --keyfile "$keyfile" --certfile "$certfile" --bind "$bind_address" --chdir "$app_path" "$app_instance" -D
 
 # Restart the Nginx and Apache services
 # for the changes to take effect
