@@ -39,13 +39,5 @@ fi
 sudo mv "$dest_dir/nginx.conf" "$nginx_conf_target"
 # sudo mv "$dest_dir/httpd.conf" "$httpd_conf_target"
 
-# Restart the Nginx and Apache services
-# for the changes to take effect
-sudo systemctl restart nginx
-# sudo systemctl restart httpd
-
-# Start the web server for the Python application in /var/www/html/MyWebsite/app.py using the gunicorn command.
-sudo gunicorn --keyfile /etc/ssl/adventurecryptoSSL.key --certfile /etc/ssl/adventurecryptoSSL.crt --bind 0.0.0.0:8000 --chdir /var/www/html/MyWebsite app:app -D
-
-# Copy the update_website.sh script to the /var/www/html directory.
-sudo cp "/var/www/html/MyWebsite/update_website.sh" "/var/www/html"
+# Start the web server
+bash start_server.sh
