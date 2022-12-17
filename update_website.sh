@@ -1,20 +1,20 @@
 #!/bin/bash
 
 # Set the path to the destination directory
-dest_dir="/var/www/html/MyWebsite/Config"
+dest_dir="/etc/MyWebsite/Config"
 
 # Set the paths to the target configuration files
 nginx_conf_target="/etc/nginx/nginx.conf"
 httpd_conf_target="/etc/httpd/conf/httpd.conf"
 
 # Check if the 'MyWebsite' directory already exists
-if [ -d "/var/www/html/MyWebsite" ]; then
+if [ -d "/etc/MyWebsite" ]; then
   # Remove the existing 'MyWebsite' directory
-  sudo rm -rf /var/www/html/MyWebsite
+  sudo rm -rf /etc/MyWebsite
 fi
 
 # Clone the Git repository
-git clone https://github.com/Najia-afk/MyWebsite.git /var/www/html/MyWebsite
+git clone https://github.com/Najia-afk/MyWebsite.git /etc/MyWebsite
 
 # Check if /etc/ssl directory exists
 if [ ! -d "/etc/ssl" ]; then
@@ -23,15 +23,15 @@ if [ ! -d "/etc/ssl" ]; then
 fi
 
 # Check if adventurecryptoSSL.crt file exists in /var/www/html/MyWebsite/config
-if [ -f "/var/www/html/MyWebsite/Config/adventurecryptoSSL.crt" ]; then
+if [ -f "/etc/MyWebsite/Config/adventurecryptoSSL.crt" ]; then
   # If it exists, copy it to /etc/ssl
-  sudo cp "/var/www/html/MyWebsite/Config/adventurecryptoSSL.crt" "/etc/ssl"
+  sudo cp "/etc/MyWebsite/Config/adventurecryptoSSL.crt" "/etc/ssl"
 fi
 
 # Check if adventurecryptoSSL.key file exists in /var/www/html/MyWebsite/config
-if [ -f "/var/www/html/MyWebsite/Config/adventurecryptoSSL.key" ]; then
+if [ -f "/etc/MyWebsite/Config/adventurecryptoSSL.key" ]; then
   # If it exists, copy it to /etc/ssl
-  sudo cp "/var/www/html/MyWebsite/Config/adventurecryptoSSL.key" "/etc/ssl"
+  sudo cp "/etc/MyWebsite/Config/adventurecryptoSSL.key" "/etc/ssl"
 fi
 
 # Move the imported configuration files
