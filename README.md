@@ -69,5 +69,6 @@
 - Run the following command to make the script executable:
 
       ```sudo chmod +x /var/www/html/update_website.sh```
+      
 
 
