@@ -17,7 +17,7 @@ app_instance="app:app"
 sudo systemctl restart nginx
 
 # Start the web server using gunicorn
-sudo gunicorn --keyfile "$keyfile" --certfile "$certfile" --bind "$bind_address" "$app_path" "$app_instance" -D
+gunicorn --keyfile "$keyfile" --certfile "$certfile" --bind "$bind_address" "$app_path" "$app_instance" -D
 
 # Restart the Nginx and Apache services
 # for the changes to take effect
