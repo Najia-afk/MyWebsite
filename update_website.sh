@@ -43,7 +43,7 @@ fi
 # Move everything from the /etc/MyWebsite/templates directory into /var/www/html/MyWebsite/templates and create the templates directory if it doesn't already exist,
 sudo mkdir -p /var/www/html/MyWebsite/templates
 sudo mv /etc/MyWebsite/templates/* /var/www/html/MyWebsite/templates/
-sudo chmod -R 755 /var/www/html/MyWebsite/templates
+# sudo chmod -R 755 /var/www/html/MyWebsite/templates
 
 # Move the imported configuration files
 # and rename them to the original configuration file names
