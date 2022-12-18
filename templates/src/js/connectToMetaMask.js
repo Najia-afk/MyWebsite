@@ -7,6 +7,9 @@ function connectToMetaMask() {
       const walletAddress = ethereum.selectedAddress;
       // Display the wallet address in the HTML
       document.getElementById('wallet-address').innerHTML = `Wallet address: ${walletAddress}`;
+      // Update the text of the meta-mask-button element
+      const metaMaskButton = document.querySelector('.meta-mask-button');
+      metaMaskButton.textContent = `Connected to ${walletAddress}`;
     }).catch(function(error) {
       // If the user denies permission, display an error message
       console.error(error);
