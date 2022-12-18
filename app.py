@@ -150,7 +150,7 @@ def getwalletbalance():
         # Set up the result object
         result = {
             "wallet_address": wallet_address,
-            "balance": balance,
+            "balance": ether_balance,
             "matic_balance_usd": matic_balance_usd
         }
 
