@@ -59,16 +59,12 @@
 9. Clone the website repository:
  - Replace "USERNAME" and "WEBSITE" with your GitHub username and the name of your website repository, respectively.
 
-      ```git clone https://github.com/USERNAME/WEBSITE.git /var/www/html```
+      ```git clone https://github.com/USERNAME/WEBSITE.git /etc/```
 
 10. Restart the web server!
 
       ```systemctl restart nginx```
       
-11. Make the script executable:
-- Run the following command to make the script executable:
 
-      ```sudo chmod +x /var/www/html/update_website.sh```
-      
 
 
