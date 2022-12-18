@@ -9,9 +9,17 @@
     <link rel="stylesheet" href="/css/styles.css">
   </head>
   <body>
-    <!-- Add a button to connect to MetaMask -->
-    <button class="meta-mask-button" onclick="connectToMetaMask()">Connect to MetaMask</button>
-
+    <div class="top-nav">
+      <!-- Add a button to connect to MetaMask -->
+      <button class="meta-mask-button" onclick="connectToMetaMask()">Connect to MetaMask</button>
+      <!-- Add a div to display the MATIC price at the middle top of the screen -->
+      <div id="matic-price"></div>
+      <!-- Add a script to get the MATIC price -->
+      <script src="/js/getmaticprice.js"></script>
+      <!-- Add a div to display the domain name -->
+      <div id="domain-name">adventurecrypto.xyz</div>
+    </div>
+    
     <div class="container">
       <!-- Add a heading and form for the wallet balance checker -->
       <h1>Wallet Balance Checker</h1>
@@ -20,21 +28,12 @@
         <input type="text" id="wallet_address" name="wallet_address"><br>
         <input type="submit" value="Check Balance" onclick="getBalance()">
       </form>
-
       <div id="balance"></div>
     </div>
 
     <!-- Add a new div to show the result of the multiplication -->
     <div id="multiplication-result"></div>
 
-    <!-- Add a div to display the MATIC price at the middle top of the screen -->
-    <div id="matic-price"></div>
-
-    <!-- Add a script to get the MATIC price -->
-    <script src="/js/getmaticprice.js"></script>
-
-    <div id="domain-name">adventurecrypto.xyz</div>
-    
   </body>
 </html>
 
