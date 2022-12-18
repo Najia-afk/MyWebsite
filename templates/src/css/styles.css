@@ -13,11 +13,10 @@ body {
   font-size: 18px;
 }
 
-/* Style the MetaMask connection button */
-button.meta-mask-button {
+/* Style the top nav "MetaMask connection button", "M#matic-price" and "#domain-name" */
+.top-nav {
   position: absolute;
   top: 10px;
-  right: 10px;
   display: block;
   margin: 20px auto;
   padding: 10px 20px;
@@ -27,6 +26,19 @@ button.meta-mask-button {
   color: #fff;
   cursor: pointer;
   font-size: 16px;
+}
+
+#domain-name {
+  left: 10px;
+}
+
+#matic-price {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+button.meta-mask-button {
+  right: 10px;
 }
 
 button.meta-mask-button:hover {
@@ -102,14 +114,6 @@ input[type="submit"]:hover {
   font-size: 18px;
 }
 
-/* Style the MATIC price display at the top center of the screen */
-#matic-price {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 18px;
-}
 
 /* Style the multiplication result display element */
 #multiplication-result {
@@ -119,11 +123,4 @@ input[type="submit"]:hover {
   font-size: 18px;
 }
 
-/* Style the domain name display element */
-#domain-name {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 18px;
-}
 
