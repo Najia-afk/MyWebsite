@@ -53,26 +53,34 @@ button.meta-mask-button:hover {
   background-color: #5c6bc0;
 }
 
-/* Style the heading */
-h1 {
-  text-align: center;
-  margin: 20px auto;
-  font-size: 24px;
-  color: #3f51b5;
+
+/* Style the container element */
+.container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Style the heading */
+h1 {
+  text-align: center;
+  font-size: 24px;
+  color: #3f51b5;
 }
 
 /* Style the form */
 form {
-  display: inline-block;
   max-width: 400px;
-  margin: 20px auto;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 /* Style the label element */
@@ -104,15 +112,6 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: #45a049;
-}
-
-/* Style the container element */
-.container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
 }
 
 /* Style the balance display element */
