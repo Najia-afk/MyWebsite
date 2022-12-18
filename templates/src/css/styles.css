@@ -6,144 +6,124 @@ body {
   margin: 0;
 }
 
-/* Style the MATIC price display at the top center of the screen */
-#matic-price {
-  position: absolute;  /* position the element at an absolute location */
-  top: 0;  /* position the element at the top of the screen */
-  left: 50%;  /* position the element at the horizontal center of the screen */
-  transform: translateX(-50%);  /* move the element to the left by half of its width to center it horizontally */
-  font-size: 18px;  /* set the font size */
-}
-
-/* Style buttons */
-button {
-  display: block;  /* display the element as a block */
-  margin: 20px auto;  /* center the element horizontally and add a top and bottom margin of 20px */
-  padding: 10px 20px;  /* add padding to the element */
-  border: none;  /* remove the border */
-  border-radius: 4px;  /* round the corners of the element */
-  background-color: #3f51b5;  /* set the background color to a shade of blue */
-  color: #fff;  /* set the text color to white */
-  cursor: pointer;  /* change the cursor to a pointer when hovering over the element */
-  font-size: 16px;  /* set the font size */
-}
-
-/* Style buttons when they are hovered over */
-button:hover {
-  background-color: #5c6bc0;  /* change the background color to a different shade of blue when hovered over */
-}
-
 /* Style the wallet address display */
 #wallet-address {
-  margin: 20px auto;  /* center the element horizontally and add a top and bottom margin of 20px */
-  text-align: center;  /* center the text inside the element */
-  font-size: 18px;  /* set the font size */
+  margin: 20px auto;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* Style the MetaMask connection button */
+button.meta-mask-button {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3f51b5;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button.meta-mask-button:hover {
+  background-color: #5c6bc0;
 }
 
 /* Style the heading */
 h1 {
-  text-align: center;  /* center the text inside the element */
-  margin: 20px auto;  /* center the element horizontally and add a top and bottom margin of 20px */
-  font-size: 24px;  /* set the font size */
-  color: #3f51b5;  /* set the text color to a shade of blue */
-  position: absolute;  /* position the element at an absolute location */
-  top: 50%;  /* position the element at the vertical center of the screen */
-  left: 50%;  /* position the element at the horizontal center of the screen */
-  transform: translate(-50%, -50%);  /* move the element up and to the left by half of its width and height to center it vertically and horizontally */
+  text-align: center;
+  margin: 20px auto;
+  font-size: 24px;
+  color: #3f51b5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-/* Style the container element */
-.container {
-  position: absolute;  /* position the element at an absolute location */
-  top: 50%;  /* position the element at the vertical center of the screen */
-  left: 50%;  /* position the element at the horizontal center of the screen */
-  transform: translate(-50%, -50%);  /* move the element up and to the left by half of its width and height to center it vertically and horizontally */
-  text-align: center;  /* center the text inside the element */
-}
-
-/* Style the form element */
+/* Style the form */
 form {
-  display: inline-block;  /* display the element as an inline block */
-}
-
-form {
-  max-width: 400px;  /* set the maximum width of the element */
-  margin: 20px auto;  /* center the element horizontally and add a top and bottom margin of 20px */
-  display: flex;  /* display the element as a flex container */
-  flex-direction: column;  /* set the direction of the flex items to be in a column */
-  align-items: center;  /* align the flex items to be centered horizontally */
+  display: inline-block;
+  max-width: 400px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Style the label element */
 label {
-  font-size: 16px;  /* set the font size */
+  font-size: 16px;
 }
 
 /* Style the text input element */
 input[type="text"] {
-  width: 100%;  /* set the width of the element to be 100% */
-  padding: 12px 20px;  /* add padding to the element */
-  margin: 8px 0;  /* add a top and bottom margin of 8px */
-  box-sizing: border-box;  /* include the padding and border in the element's total width and height */
-  border: 1px solid #ccc;  /* add a 1px solid grey border to the element */
-  border-radius: 4px;  /* round the corners of the element */
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 /* Style the submit button element */
 input[type="submit"] {
-  background-color: #3f51b5;  /* set the background color to a shade of blue */
-  color: #fff;  /* set the text color to white */
-  font-size: 16px;  /* set the font size */
-  padding: 10px 20px;  /* add padding to the element */
-  margin-top: 20px;  /* add a top margin of 20px */
-  cursor: pointer;  /* change the cursor to a pointer when hovering over the element */
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-/* Style the submit button element when it is hovered over */
 input[type="submit"]:hover {
-  background-color: #5c6bc0;  /* change the background color to a different shade of blue when hovered over */
+  background-color: #45a049;
+}
+
+/* Style the container element */
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 /* Style the balance display element */
 #balance {
-  margin: 20px auto;  /* center the element horizontally and add a top and bottom margin of 20px */
-  text-align: center;  /* center the text inside the element */
-  font-size: 18px;  /* set the font size */
+  margin: 20px auto;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* Style the MATIC price display at the top center of the screen */
+#matic-price {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
 }
 
 /* Style the multiplication result display element */
 #multiplication-result {
-  position: absolute;  /* position the element at an absolute location */
-  top: 0;  /* position the element at the top of the screen */
-  right: 0;  /* position the element at the right side of the screen */
-  font-size: 18px;  /* set the font size */
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 18px;
 }
 
 /* Style the domain name display element */
 #domain-name {
-  position: absolute;  /* position the element at an absolute location */
-  top: 0;  /* position the element at the top of the screen */
-  left: 10px;  /* position the element at the left side of the screen, with a left margin of 10px */
-  font-size: 18px;  /* set the font size */
+  position: absolute;
+  top: 0;
+  left: 10px;  /*
+  font-size: 18px;
 }
 
-/* Style the MetaMask button */
-button.meta-mask-button {
-  position: absolute;  /* position the element at an absolute location */
-  top: 0;  /* position the element at the top of the screen */
-  right: 10px;  /* position the element at the right side of the screen, with a right margin of 10px */
-  display: block;  /* display the element as a block */
-  margin: 20px auto;  /* center the element horizontally and add a top and bottom margin of 20px */
-  padding: 10px 20px;  /* add padding to the element */
-  border: none;  /* remove the border */
-  border-radius: 4px;  /* round the corners of the element */
-  background-color: #3f51b5;  /* set the background color to a shade of blue */
-  color: #fff;  /* set the text color to white */
-  cursor: pointer;  /* change the cursor to a pointer when hovering over the element */
-  font-size: 16px;  /* set the font size */
-}
-
-/* Style the MetaMask button when it is hovered over */
-button.meta-mask-button:hover {
-  background-color: #5c6bc0;  /* change the background color to a different shade of blue when hovered over */
-}
