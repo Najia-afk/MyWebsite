@@ -105,7 +105,7 @@ input[type="submit"]:hover {
 /* Style the MATIC price display at the top center of the screen */
 #matic-price {
   position: absolute;
-  top: 0;
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
   font-size: 18px;
@@ -122,8 +122,8 @@ input[type="submit"]:hover {
 /* Style the domain name display element */
 #domain-name {
   position: absolute;
-  top: 0;
-  left: 10px;  /*
+  top: 20%;
+  left: 10px;
   font-size: 18px;
 }
 
