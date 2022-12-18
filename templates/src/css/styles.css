@@ -5,6 +5,14 @@ body {
   margin: 0;
 }
 
+#matic-price {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+}
+
 button {
   display: block;
   margin: 20px auto;
@@ -74,6 +82,7 @@ input[type="submit"]:hover {
   font-size: 18px;
 }
 
+
 #multiplication-result {
   position: absolute;
   top: 0;
@@ -81,13 +90,7 @@ input[type="submit"]:hover {
   font-size: 18px;
 }
 
-#matic-price {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 18px;
-}
+
 
 #domain-name {
   position: absolute;
