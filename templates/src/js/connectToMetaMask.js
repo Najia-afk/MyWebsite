@@ -4,12 +4,12 @@ function connectToMetaMask() {
     // Request permission to access the wallet
     ethereum.enable().then(function() {
       // Get the user's wallet address
-      const walletAddress = ethereum.selectedAddress;
+      const MetamaskwalletAddress = ethereum.selectedAddress;
       // Display the wallet address in the HTML
-      document.getElementById('wallet-address').innerHTML = `Wallet address: ${walletAddress}`;
+      document.getElementById('wallet-address').innerHTML = `${MetamaskwalletAddress}`;
       // Update the text of the meta-mask-button element
       const metaMaskButton = document.querySelector('.meta-mask-button');
-      metaMaskButton.textContent = `Connected to ${walletAddress}`;
+      metaMaskButton.textContent = `${MetamaskwalletAddress}`;
     }).catch(function(error) {
       // If the user denies permission, display an error message
       console.error(error);
