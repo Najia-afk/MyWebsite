@@ -16,7 +16,7 @@ body {
 /* Style the MetaMask connection button */
 button.meta-mask-button {
   position: absolute;
-  top: 0;
+  top: 20%;
   right: 10px;
   display: block;
   margin: 20px auto;
