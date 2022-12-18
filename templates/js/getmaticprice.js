@@ -30,5 +30,10 @@ function getMaticPrice() {
     });
 }
 
+// Call the getMaticPrice function when the page loads
+window.onload = function() {
+  getMaticPrice();
+}
+
 // Call the getMaticPrice function every 5 minutes
 setInterval(getMaticPrice, 300000);
