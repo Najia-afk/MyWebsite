@@ -131,23 +131,23 @@ def getwalletbalance():
         w3 = web3.Web3(web3.Web3.HTTPProvider("https://api.polygonscan.com/api"))
 
         # Convert the balance from Wei to Ether
-        Matic_balance = w3.fromWei(balance, "ether")
+        balance = w3.fromWei(balance, "ether")
         
         # Round the values to two decimal places
-        ether_balance = round(Matic_balance, 2)
+        balance = round(balance, 2)
      
         # Multiply the balance by the MATIC price
-        matic_balance_usd = Matic_balance * matic_balance_usd
+        matic_balance_usd = balance * matic_balance_usd
 
         # Replace the placeholder in the HTML page with the balance
         with open("/var/www/html/MyWebsite/templates/Main.html", "r") as f:
             html = f.read()
-        html = html.replace("{{balance}}", str(Matic_balance) + " Matic")
+        html = html.replace("{{balance}}", str(balance) + " Matic")
 
         # Set up the result object
         result = {
             "wallet_address": wallet_address,
-            "balance": Matic_balance,
+            "balance": balance,
             "matic_balance_usd": matic_balance_usd
         }
 
