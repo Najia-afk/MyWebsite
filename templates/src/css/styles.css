@@ -83,8 +83,15 @@ input[type="submit"]:hover {
 
 #matic-price {
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
+  font-size: 18px;
+}
+
+#domain-name {
+  position: absolute;
+  top: 0;
+  right: 0;
   font-size: 18px;
 }
