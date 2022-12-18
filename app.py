@@ -140,17 +140,17 @@ def getwalletbalance():
         ether_balance = w3.fromWei(balance, "ether")
         
         # Round the values to two decimal places
-        ether_balance = round(ether_balance, 2)
+        balance = round(ether_balance, 2)
 
         # Replace the placeholder in the HTML page with the balance
         with open("/var/www/html/MyWebsite/templates/Main.html", "r") as f:
             html = f.read()
-        html = html.replace("{{balance}}", str(ether_balance) + " Matic")
+        html = html.replace("{{balance}}", str(balance) + " Matic")
 
         # Set up the result object
         result = {
             "wallet_address": wallet_address,
-            "balance": ether_balance,
+            "balance": balance,
             "matic_balance_usd": matic_balance_usd
         }
 
