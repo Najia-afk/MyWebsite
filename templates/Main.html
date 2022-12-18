@@ -2,9 +2,10 @@
 <html lang="en">
   <head>
     <title>Wallet Balance Checker</title>
+    <!-- Add scripts for wallet balance and MetaMask connection -->
     <script src="/js/getwalletbalance.js"></script>
     <script src="/js/connectToMetaMask.js"></script>
-      <!-- Link to an external stylesheet -->
+    <!-- Link to an external stylesheet -->
     <link rel="stylesheet" href="/css/styles.css">
   </head>
   <body>
@@ -12,17 +13,21 @@
     <button class="meta-mask-button" onclick="connectToMetaMask()">Connect to MetaMask</button>
     <!-- Add a div to display the wallet address if connected -->
     <div id="wallet-address"></div>
-    <h1>Wallet Balance Checker</h1>
-    <form id="form" action="https://www.adventurecrypto.xyz:8000/getwalletbalance" method="get">
-      <label for="wallet_address">Enter the address of your wallet:</label><br>
-      <input type="text" id="wallet_address" name="wallet_address"><br>
-      <input type="submit" value="Check Balance" onclick="getBalance()">
-    </form>
-    <div id="balance"></div>
+    <div class="container">
+      <!-- Add a heading and form for the wallet balance checker -->
+      <h1>Wallet Balance Checker</h1>
+      <form id="form" action="https://www.adventurecrypto.xyz:8000/getwalletbalance" method="get">
+        <label for="wallet_address">Enter the address of your wallet:</label><br>
+        <input type="text" id="wallet_address" name="wallet_address"><br>
+        <input type="submit" value="Check Balance" onclick="getBalance()">
+      </form>
+      <div id="balance"></div>
+    </div>
     <!-- Add a new div to show the result of the multiplication -->
     <div id="multiplication-result"></div>
     <!-- Add a div to display the MATIC price at the middle top of the screen -->
     <div id="matic-price"></div>
+    <!-- Add a script to get the MATIC price -->
     <script src="/js/getmaticprice.js"></script>
   </body>
 </html>
