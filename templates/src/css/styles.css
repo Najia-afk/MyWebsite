@@ -46,7 +46,7 @@ body {
 /* Style the MetaMask connection button */
 button.meta-mask-button {
   position: absolute;
-  right: 10px;
+  right: 20px;
 }
 
 button.meta-mask-button:hover {
