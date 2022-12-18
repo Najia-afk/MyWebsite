@@ -13,12 +13,14 @@ body {
   font-size: 18px;
 }
 
-/* Style the top nav "MetaMask connection button", "M#matic-price" and "#domain-name" */
+/* Style the top nav element */
 .top-nav {
   position: absolute;
   top: 10px;
-  display: block;
-  margin: 20px auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -28,16 +30,22 @@ body {
   font-size: 16px;
 }
 
+/* Style the domain name element */
 #domain-name {
+  position: absolute;
   left: 10px;
 }
 
+/* Style the M#matic-price element */
 #matic-price {
+  position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
+/* Style the MetaMask connection button */
 button.meta-mask-button {
+  position: absolute;
   right: 10px;
 }
 
