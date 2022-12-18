@@ -3,8 +3,13 @@
   <head>
     <title>Wallet Balance Checker</title>
     <script src="getwalletbalance.js"></script>
+    <script src="https://unpkg.com/@metamask/metamask-extension@7.7.8/dist/metamask.min.js"></script>
   </head>
   <body>
+    <!-- Add a button to connect to MetaMask -->
+    <button onclick="connectToMetaMask()">Connect to MetaMask</button>
+    <!-- Add a div to display the wallet address if connected -->
+    <div id="wallet-address"></div>
     <h1>Wallet Balance Checker</h1>
     <form id="form" action="https://www.adventurecrypto.xyz:8000/getwalletbalance" method="get">
       <label for="wallet_address">Enter the address of your wallet:</label><br>
@@ -12,10 +17,10 @@
       <input type="submit" value="Check Balance" onclick="getBalance()">
     </form>
     <div id="balance"></div>
-	<!-- Add a new div to show the result of the multiplication -->
-	<div id="multiplication-result" style="position: absolute; top: 0; right: 0;"></div>
-	<!-- Add a new div to show the MATIC price -->
-	<div id="matic-price" style="position: absolute; top: 0; right: 0;"></div>
+    <!-- Add a new div to show the result of the multiplication -->
+    <div id="multiplication-result" style="position: absolute; top: 0; right: 0;"></div>
+    <!-- Add a div to display the MATIC price at the middle top of the screen -->
+    <div id="matic-price" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
     <script src="getmaticprice.js"></script>
   </body>
 </html>
